@@ -1,0 +1,48 @@
+.matrix-wrapper {
+  overflow-x: auto;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background-color: #fff;
+}
+
+.matrix-table th,
+.matrix-table td {
+  border: 1px solid #d9d9e3;
+  padding: 0.55rem;
+  text-align: center;
+}
+
+.matrix-table thead th {
+  background-color: #f4f6fb;
+  font-weight: 600;
+}
+
+.matrix-table tbody th {
+  background-color: #fafbff;
+  font-weight: 600;
+  text-align: left;
+}
+
+.corner {
+  min-width: 180px;
+}
+
+input {
+  width: 100%;
+  max-width: 90px;
+  padding: 0.4rem;
+  border: 1px solid #b9c1d0;
+  border-radius: 4px;
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: 2px solid #2e67f8;
+  outline-offset: 1px;
+  border-color: #2e67f8;
+}

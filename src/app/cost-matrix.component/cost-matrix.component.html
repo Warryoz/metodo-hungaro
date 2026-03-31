@@ -1,0 +1,30 @@
+<div class="matrix-wrapper">
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th class="corner">Conductor \ Ruta</th>
+        @for (column of matrix.length > 0 ? matrix[0] : []; track trackByIndex($index)) {
+          <th>Ruta {{ $index + 1 }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of matrix; track trackByIndex($index); let rowIndex = $index) {
+        <tr>
+          <th>Conductor {{ rowIndex + 1 }}</th>
+          @for (cell of row; track trackByIndex($index); let columnIndex = $index) {
+            <td>
+              <input
+                type="number"
+                inputmode="decimal"
+                [value]="cell ?? ''"
+                (input)="onCellInput(rowIndex, columnIndex, $any($event.target).value)"
+                placeholder="0"
+              />
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

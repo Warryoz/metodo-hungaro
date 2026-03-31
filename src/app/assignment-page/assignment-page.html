@@ -1,0 +1,37 @@
+<main class="assignment-page">
+  <header>
+    <h1>Asignación de conductores a rutas</h1>
+    <p>
+      Simula la asignación óptima de costo mínimo entre conductores y rutas usando el método
+      húngaro.
+    </p>
+  </header>
+
+  <section class="config-panel">
+    <label for="matrix-size">Tamaño de matriz (N x N)</label>
+    <input
+      id="matrix-size"
+      type="number"
+      [min]="minSize"
+      [max]="maxSize"
+      [ngModel]="matrixSize"
+      (ngModelChange)="onMatrixSizeChange($event)"
+    />
+    <span class="hint">Rango permitido: {{ minSize }} a {{ maxSize }}</span>
+  </section>
+
+  <section class="matrix-panel">
+    <h2>Matriz de costos</h2>
+    <app-cost-matrix [matrix]="matrix" (matrixChange)="onMatrixChange($event)" />
+  </section>
+
+  <div class="actions">
+    <button type="button" (click)="resolveAssignment()">Asignar rutas</button>
+  </div>
+
+  @if (validationMessage) {
+    <p class="validation-message">{{ validationMessage }}</p>
+  }
+
+  <app-assignment-result [result]="result" [matrixUsed]="matrixUsedForResult" />
+</main>

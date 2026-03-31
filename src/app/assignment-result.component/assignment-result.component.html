@@ -1,0 +1,41 @@
+@if (result) {
+  <section class="result-card">
+    <h2>Asignación óptima</h2>
+
+    <ul class="assignment-list">
+      @for (assignment of result.assignments; track trackByIndex($index)) {
+        <li>
+          <span>Conductor {{ assignment.driverIndex + 1 }}</span>
+          <strong>Ruta {{ assignment.routeIndex + 1 }}</strong>
+          <small>Costo: {{ assignment.cost }}</small>
+        </li>
+      }
+    </ul>
+
+    <p class="total">Costo total mínimo: <strong>{{ result.totalCost }}</strong></p>
+
+    <h3>Matriz usada en el cálculo</h3>
+    <div class="snapshot-wrapper">
+      <table class="snapshot-table">
+        <thead>
+          <tr>
+            <th>Conductor \ Ruta</th>
+            @for (column of matrixUsed.length > 0 ? matrixUsed[0] : []; track trackByIndex($index)) {
+              <th>Ruta {{ $index + 1 }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of matrixUsed; track trackByIndex($index); let rowIndex = $index) {
+            <tr>
+              <th>Conductor {{ rowIndex + 1 }}</th>
+              @for (value of row; track trackByIndex($index)) {
+                <td>{{ value }}</td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+}

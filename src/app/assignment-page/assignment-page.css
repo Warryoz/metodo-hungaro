@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+.assignment-page {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  color: #162132;
+  font-family: Arial, sans-serif;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.7rem 0 1.4rem;
+  color: #425066;
+  max-width: 760px;
+}
+
+.config-panel,
+.matrix-panel {
+  border: 1px solid #d9d9e3;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.config-panel {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 280px;
+}
+
+.config-panel label {
+  font-weight: 600;
+}
+
+.config-panel input {
+  width: 100%;
+  padding: 0.45rem;
+  border-radius: 4px;
+  border: 1px solid #bcc4d3;
+}
+
+.hint {
+  color: #5a667a;
+  font-size: 0.9rem;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+}
+
+.actions {
+  margin: 1rem 0;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  background-color: #1f5fe0;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #184fbe;
+}
+
+.validation-message {
+  margin: 0;
+  color: #b02727;
+  font-weight: 600;
+}

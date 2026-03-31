@@ -1,12 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { AssignmentPage } from './assignment-page/assignment-page'
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
+  imports: [AssignmentPage],
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('hung');
-}
+export class App {}

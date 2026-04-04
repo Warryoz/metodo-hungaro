@@ -72,7 +72,7 @@
 .config-panel {
   display: grid;
   gap: 0.45rem;
-  max-width: 280px;
+  max-width: 520px;
 }
 
 .config-panel label {
@@ -83,6 +83,7 @@
   padding: 0.45rem;
   border-radius: 4px;
   border: 1px solid #bcc4d3;
+  max-width: 160px;
 }
 
 .hint {
@@ -90,27 +91,52 @@
   font-size: 0.9rem;
 }
 
-h2 {
-  margin: 0 0 0.75rem;
+.mode-switch {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
 }
 
-.actions {
-  margin: 1rem 0;
-}
-
-button {
+.mode-switch button,
+.example-actions button,
+.actions button {
   border: none;
   border-radius: 8px;
   background-color: #1f5fe0;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  padding: 0.65rem 1.1rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
 }
 
-button:hover {
+.mode-switch button {
+  background-color: #6c7a95;
+}
+
+.mode-switch button.active {
+  background-color: #1f5fe0;
+}
+
+.mode-switch button:hover,
+.example-actions button:hover,
+.actions button:hover {
   background-color: #184fbe;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+}
+
+.example-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actions {
+  margin: 1rem 0;
 }
 
 .validation-message {

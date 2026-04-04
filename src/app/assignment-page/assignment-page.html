@@ -2,7 +2,7 @@
   <header class="academic-header">
     <p class="institution">Universidad ECCI</p>
     <p class="subject">Materia: Investigación de Operaciones</p>
-    <p class="subject" style="text-transform: capitalize;">Profesor: JONATHAN L GUTIERREZ V</p>
+    <p class="subject" style="text-transform: capitalize">Profesor: JONATHAN L GUTIERREZ V</p>
     <p class="student">Geronimo Velasco — Código 126667</p>
     <p class="student">Julian Castro — Código 126567</p>
   </header>
@@ -37,10 +37,28 @@
       (ngModelChange)="onMatrixSizeChange($event)"
     />
     <span class="hint">Rango permitido: {{ minSize }} a {{ maxSize }}</span>
+
+    <div class="mode-switch" role="group" aria-label="Modo de visualización">
+      <button type="button" [class.active]="mode === 'rapido'" (click)="onModeChange('rapido')">
+        Modo rápido
+      </button>
+      <button
+        type="button"
+        [class.active]="mode === 'explicacion'"
+        (click)="onModeChange('explicacion')"
+      >
+        Modo explicación
+      </button>
+    </div>
   </section>
 
   <section class="matrix-panel">
     <h2>Matriz de costos</h2>
+    <div class="example-actions">
+      <button type="button" (click)="loadBasicExample()">Cargar ejemplo básico</button>
+      <button type="button" (click)="loadIntermediateExample()">Cargar ejemplo intermedio</button>
+      <button type="button" (click)="generateRandomMatrix()">Generar matriz aleatoria</button>
+    </div>
     <app-cost-matrix [matrix]="matrix" (matrixChange)="onMatrixChange($event)" />
   </section>
 
@@ -52,5 +70,5 @@
     <p class="validation-message">{{ validationMessage }}</p>
   }
 
-  <app-assignment-result [result]="result" [matrixUsed]="matrixUsedForResult" />
+  <app-assignment-result [result]="result" [matrixUsed]="matrixUsedForResult" [mode]="mode" />
 </main>

@@ -14,6 +14,18 @@
 
     <p class="total">Costo total mínimo: <strong>{{ result.totalCost }}</strong></p>
 
+    <section class="comparison-card">
+      <h3>Comparación con solución simple (diagonal)</h3>
+      <p>Costo solución simple: <strong>{{ result.simpleComparison.totalCost }}</strong></p>
+      <p>Costo óptimo (Método Húngaro): <strong>{{ result.totalCost }}</strong></p>
+      <p>Ahorro obtenido: <strong>{{ result.simpleComparison.savings }}</strong></p>
+    </section>
+
+    <section class="summary-card">
+      <h3>Resumen automático</h3>
+      <p>{{ result.summary }}</p>
+    </section>
+
     <h3>Matriz usada en el cálculo</h3>
     <div class="snapshot-wrapper">
       <table class="snapshot-table">
@@ -39,5 +51,49 @@
         </tbody>
       </table>
     </div>
+
+    @if (mode === 'explicacion' && result.steps.length > 0) {
+      <section class="steps-panel">
+        <h3>Paso a paso del Método Húngaro</h3>
+
+        @for (step of result.steps; track step.id) {
+          <article class="step-card">
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
+
+            <div class="snapshot-wrapper">
+              <table class="snapshot-table">
+                <thead>
+                  <tr>
+                    <th>Conductor \ Ruta</th>
+                    @for (column of step.matrix.length > 0 ? step.matrix[0] : []; track trackByIndex($index)) {
+                      <th [class.covered-col]="isCoveredColumn(step, $index)">Ruta {{ $index + 1 }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of step.matrix; track trackByIndex($index); let rowIndex = $index) {
+                    <tr>
+                      <th [class.covered-row]="isCoveredRow(step, rowIndex)">Conductor {{ rowIndex + 1 }}</th>
+                      @for (value of row; track trackByIndex($index); let columnIndex = $index) {
+                        <td
+                          [class.candidate-zero]="isStepCandidateZero(step, rowIndex, columnIndex)"
+                          [class.step-selected]="isStepCellHighlighted(step, rowIndex, columnIndex)"
+                          [class.step-discarded]="isStepDiscarded(step, rowIndex, columnIndex)"
+                          [class.covered-row]="isCoveredRow(step, rowIndex)"
+                          [class.covered-col]="isCoveredColumn(step, columnIndex)"
+                        >
+                          {{ value }}
+                        </td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </article>
+        }
+      </section>
+    }
   </section>
 }

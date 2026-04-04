@@ -45,7 +45,11 @@ Materia: Investigación de Operaciones
 Profesor: Jonathan L Gutierrez V
 
 ## Cómo ejecutar el proyecto
-
+Tener por lo menos estas versiones con las que se creo el proyecto: 
+* Angular CLI       : 21.2.5
+* Angular           : 21.2.6
+* Node.js           : 24.14.1
+* Package Manager   : npm 11.6.2
 ```bash
 npm install
 ng serve

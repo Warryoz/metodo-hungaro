@@ -61,7 +61,17 @@ export class AssignmentPage {
   }
 
   private isMatrixValid(): boolean {
+    if (this.matrix.length !== this.matrixSize) {
+      this.validationMessage = 'La matriz debe tener el mismo número de filas y columnas.';
+      return false;
+    }
+
     for (let row = 0; row < this.matrix.length; row++) {
+      if (!Array.isArray(this.matrix[row]) || this.matrix[row].length !== this.matrixSize) {
+        this.validationMessage = 'La matriz debe ser cuadrada (N x N).';
+        return false;
+      }
+
       for (let col = 0; col < this.matrix[row].length; col++) {
         const value = this.matrix[row][col];
         if (value === null || !Number.isFinite(value)) {

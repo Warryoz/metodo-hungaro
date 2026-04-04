@@ -3,24 +3,15 @@
 }
 
 .assignment-page {
-  max-width: 980px;
+  max-width: 780px;
   margin: 2rem auto;
   padding: 1.2rem;
   color: #162132;
   font-family: Arial, sans-serif;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-header p {
-  margin: 0.7rem 0 1.4rem;
-  color: #425066;
-  max-width: 760px;
-}
-
+.academic-header,
+.academic-note,
 .config-panel,
 .matrix-panel {
   border: 1px solid #d9d9e3;
@@ -28,6 +19,54 @@ header p {
   background: #ffffff;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.academic-header {
+  display: grid;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.institution {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.subject {
+  margin: 0;
+  font-weight: 600;
+}
+
+.student {
+  margin: 0;
+  color: #273345;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0.6rem 0 0.45rem;
+  font-weight: 600;
+  color: #1e365f;
+}
+
+.page-header p {
+  margin: 0.7rem 0 1.4rem;
+  color: #425066;
+  max-width: 760px;
+}
+
+.academic-note h2 {
+  margin: 0 0 0.55rem;
+}
+
+.academic-note p {
+  margin: 0;
+  color: #3d4c64;
 }
 
 .config-panel {
@@ -41,7 +80,6 @@ header p {
 }
 
 .config-panel input {
-  width: 100%;
   padding: 0.45rem;
   border-radius: 4px;
   border: 1px solid #bcc4d3;

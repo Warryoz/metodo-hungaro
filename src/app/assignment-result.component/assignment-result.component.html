@@ -29,8 +29,10 @@
           @for (row of matrixUsed; track trackByIndex($index); let rowIndex = $index) {
             <tr>
               <th>Conductor {{ rowIndex + 1 }}</th>
-              @for (value of row; track trackByIndex($index)) {
-                <td>{{ value }}</td>
+              @for (value of row; track trackByIndex($index); let columnIndex = $index) {
+                <td [class.assigned-cell]="isAssignedCell(rowIndex, columnIndex)">
+                  {{ value }}
+                </td>
               }
             </tr>
           }

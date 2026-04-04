@@ -14,6 +14,17 @@ export class AssignmentResultComponent {
   @Input({ required: true }) result: HungarianSolution | null = null;
   @Input({ required: true }) matrixUsed: number[][] = [];
 
+  isAssignedCell(rowIndex: number, columnIndex: number): boolean {
+    if (!this.result) {
+      return false;
+    }
+
+    return this.result.assignments.some(
+      (assignment) =>
+        assignment.driverIndex === rowIndex && assignment.routeIndex === columnIndex
+    );
+  }
+
   trackByIndex(index: number): number {
     return index;
   }

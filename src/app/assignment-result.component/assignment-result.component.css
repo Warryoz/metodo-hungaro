@@ -64,3 +64,9 @@ h3 {
 .snapshot-table th {
   background: #f4f6fb;
 }
+
+.assigned-cell {
+  background: #e7f0ff;
+  color: #0f3f9b;
+  font-weight: 700;
+}

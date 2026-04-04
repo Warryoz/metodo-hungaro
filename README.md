@@ -1,60 +1,51 @@
-# Hung
+# Método Húngaro
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+Proyecto web para resolver problemas de asignación mínima usando el método húngaro.
 
-## Development server
+La aplicación permite ingresar una matriz de costos de tamaño N x N, calcular la asignación óptima entre conductores y rutas, y mostrar el costo total mínimo.
 
-To start a local development server, run:
+## Qué hace
+
+- Permite definir el tamaño de la matriz
+- Permite ingresar los costos manualmente
+- Calcula la asignación óptima
+- Muestra el resultado final y el costo total
+- Presenta una interfaz sencilla y fácil de usar
+
+## Ejemplo de uso
+
+Puedes probar con esta matriz 3x3:
+
+|        | Ruta 1 | Ruta 2 | Ruta 3 |
+|--------|--------|--------|--------|
+| Cond 1 | 9      | 2      | 7      |
+| Cond 2 | 6      | 4      | 3      |
+| Cond 3 | 5      | 8      | 1      |
+
+Resultado esperado:
+
+- Conductor 1 → Ruta 2
+- Conductor 2 → Ruta 1
+- Conductor 3 → Ruta 3
+- Costo total mínimo: 9
+
+## Objetivo
+
+Este proyecto fue desarrollado como parte de la materia Investigación de Operaciones para aplicar de forma práctica el método húngaro en un caso de asignación de costo mínimo.
+
+## Integrantes
+
+- Geronimo Velasco — Código 126667
+- Julian Castro — Código 126567
+
+## Institución
+
+Universidad ECCI  
+Materia: Investigación de Operaciones  
+Profesor: Jonathan L Gutierrez V
+
+## Cómo ejecutar el proyecto
 
 ```bash
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-"# metodo-hungaro" 
